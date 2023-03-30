@@ -1,3 +1,4 @@
+import ButtonGroup from './ButtonGroup';
 import ImageView from './ImageView'
 
 
@@ -15,8 +16,23 @@ function ImagesView(props) {
             })
     }
 
+    const groupBy = (event) => {
+        if(event.target.name==="Date"){
+            console.log("date")
+
+        } else if(event.target.name==="Modality"){
+            console.log("modality")
+
+        }
+      };
+
   return (
     <div className="ImagesView">
+        <div className="groupingButtons">
+            <p>Group By:</p>
+            <ButtonGroup
+            onClick={groupBy}/>
+        </div>
         {imageArray.map( image => {
             return <ImageView 
                 date={image.date} 

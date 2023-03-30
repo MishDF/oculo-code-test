@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ImageView from './ImageView';
 
-test('renders ??', () => {
+test('renders imgeview', () => {
     render(<ImageView date="2019-04-01" eye="L" modality="OCT" note="Right eye looks normal" thumbnail="/images/20190401_oct_left.jpg"/>);
 
     const dateLabel = screen.getByText("Examination date: 2019-04-01");
