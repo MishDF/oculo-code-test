@@ -1,13 +1,14 @@
 import ButtonGroup from './ButtonGroup';
 import ImageView from './ImageView'
+import React, { useState } from "react";
 
 
 function ImagesView(props) {
-    var imageArray = [];
+    var tempArray = [];
 
     for (let index = 0; index < props.data.examinations.length; index++) {
             props.data.examinations[index].images.map( image => {
-                imageArray.push({date: props.data.examinations[index].date,
+                tempArray.push({date: props.data.examinations[index].date,
                 eye: image.eye,
                 modality: image.modality,
                 note: image.note,
@@ -16,13 +17,13 @@ function ImagesView(props) {
             })
     }
 
-    const groupBy = (event) => {
+    const [imageArray, setImageArray] = useState(tempArray);
+
+    const groupBy = (event) => { 
         if(event.target.name==="Date"){
-            console.log("date")
-
+            setImageArray([...imageArray].sort((a, b) => new Date(...a.date.split('-')) - new Date(...b.date.split('-'))));
         } else if(event.target.name==="Modality"){
-            console.log("modality")
-
+            setImageArray([...imageArray].sort((a, b) => a.modality.localeCompare(b.modality)));
         }
       };
 

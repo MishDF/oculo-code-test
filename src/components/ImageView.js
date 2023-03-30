@@ -13,7 +13,7 @@ function ImageView(props) {
         <p className="ExamDate">Examination date: {date}</p>
         <p className="Eye">Eye: {eye}</p>
         <p className="Modality">Modality: {modality}</p>
-        <p className="Note">Note: {note}</p>
+        <p className="Note" data-testid="Note">Note: {note}</p>
         <img src={require("../data" + thumbnail)} alt={thumbnail}/>
       </div>
     );
