@@ -29,9 +29,6 @@ function UploadImage() {
                     <button type="submit" data-testid="submit-button">Upload Image</button>
                 </form>
             </div>
-            <div className="currentImage"> 
-                {selectedImage && <p data-testid="file-name">{selectedImage.name}</p>}
-            </div>
             <div className="uploadedImages"> 
                 {uploadedImages[0] && <p data-testid="uploaded-name">{uploadedImages[0].name}</p>}
             </div>
