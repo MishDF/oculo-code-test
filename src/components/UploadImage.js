@@ -5,12 +5,10 @@ function UploadImage() {
     const [uploadedImages, setUploadedImages] = useState([]);
 
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if(selectedImage){
-            //add on submit functionality
-            setUploadedImages([selectedImage]);
+            setUploadedImages([...uploadedImages, selectedImage]);
         }
     };
 
@@ -29,8 +27,8 @@ function UploadImage() {
                     <button type="submit" data-testid="submit-button">Upload Image</button>
                 </form>
             </div>
-            <div className="uploadedImages"> 
-                {uploadedImages[0] && <p data-testid="uploaded-name">{uploadedImages[0].name}</p>}
+            <div className="uploadedImagesNames"> 
+                {(uploadedImages.length > 0) && uploadedImages.map( (image, i) => <p data-testid={"uploaded-name-"+i}>{image.name}</p>)}
             </div>
         </div>
     );
