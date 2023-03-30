@@ -1,4 +1,5 @@
 
+
 function ImageView(props) {
 
     const date = props.date;
@@ -6,7 +7,6 @@ function ImageView(props) {
     const modality = props.modality;
     const note = props.note;
     const thumbnail = props.thumbnail;
-    
 
     return (
       <div className="ImageView">
@@ -15,6 +15,7 @@ function ImageView(props) {
         <p className="Modality">Modality: {modality}</p>
         <p className="Note">Note: {note}</p>
         <p className="Thumbnail">Thumbnail: {thumbnail}</p>
+
       </div>
     );
   }
