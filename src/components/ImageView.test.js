@@ -8,11 +8,11 @@ test('renders ??', () => {
     const eyeLabel = screen.getByText("Eye: L");
     const modalityLabel = screen.getByText("Modality: OCT");
     const noteLabel = screen.getByText("Note: Right eye looks normal");
-    const thumbnailLabel = screen.getByText("Thumbnail: /images/20190401_oct_left.jpg");
+    const image = screen.getByAltText("/images/20190401_oct_left.jpg");
 
     expect(dateLabel).toBeInTheDocument();
     expect(eyeLabel).toBeInTheDocument();
     expect(modalityLabel).toBeInTheDocument();
     expect(noteLabel).toBeInTheDocument();
-    expect(thumbnailLabel).toBeInTheDocument();
+    expect(image.src).toContain("20190401_oct_left.jpg");
   });

@@ -14,8 +14,7 @@ function ImageView(props) {
         <p className="Eye">Eye: {eye}</p>
         <p className="Modality">Modality: {modality}</p>
         <p className="Note">Note: {note}</p>
-        <p className="Thumbnail">Thumbnail: {thumbnail}</p>
-
+        <img src={require("../data" + thumbnail)} alt={thumbnail}/>
       </div>
     );
   }
